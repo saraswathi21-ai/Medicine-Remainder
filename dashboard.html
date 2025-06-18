@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Medicine Reminder Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-image: url('C:\\Users\\mouni\\Downloads\\miniproject\\dashboard.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .container {
+      background: linear-gradient(145deg, #e0f7fa, #ffffff, #e0f2f1);
+      padding: 30px;
+      margin: 50px auto;
+      width: 90%;
+      max-width: 500px;
+      border-radius: 20px;
+      box-shadow:
+        10px 10px 30px rgba(0, 0, 0, 0.4),
+        -10px -10px 30px rgba(255, 255, 255, 0.6),
+        inset 5px 5px 10px rgba(0, 0, 0, 0.05),
+        inset -5px -5px 10px rgba(255, 255, 255, 0.6);
+      transition: all 0.3s ease;
+    }
+
+    .container:hover {
+      transform: scale(1.02);
+    }
+
+    h2 {
+      text-align: center;
+      color: #006064;
+      font-size: 28px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    input, select, button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      margin: 12px 0;
+      font-size: 16px;
+      border-radius: 10px;
+      border: none;
+      box-shadow:
+        inset 2px 2px 6px rgba(0, 0, 0, 0.1),
+        inset -2px -2px 6px rgba(255, 255, 255, 0.7);
+      background: #f0f9ff;
+    }
+
+    button {
+      background: linear-gradient(145deg, #4dd0e1, #00acc1);
+      color: white;
+      font-weight: bold;
+      box-shadow:
+        3px 3px 10px rgba(0, 0, 0, 0.2),
+        -3px -3px 8px rgba(255, 255, 255, 0.5);
+      border: none;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background: linear-gradient(145deg, #00acc1, #00838f);
+      transform: translateY(-2px);
+    }
+
+    #reminder {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    #reminder button {
+      width: 48%;
+    }
+
+    #status {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+      color: #004d40;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Set Medicine Reminder</h2>
+    <form id="medForm">
+      <input type="text" id="medicine" placeholder="Tablet Name" required>
+      <input type="number" id="dosage" placeholder="Dosage (times/day)" required>
+      <input type="time" id="time" required>
+      <select id="period">
+        <option value="">Select Period</option>
+        <option value="Morning">Morning</option>
+        <option value="Afternoon">Afternoon</option>
+        <option value="Evening">Evening</option>
+      </select>
+      <input type="text" id="familyName" placeholder="Family Member Name" required>
+      <input type="text" id="contact" placeholder="Contact Info" required>
+      <button type="submit">Add Medicine</button>
+    </form>
+
+    <div id="reminder">
+      <button onclick="markTaken()">✅ Mark as Taken</button>
+      <button onclick="markMissed()">❌ Missed</button>
+    </div>
+
+    <div id="status"></div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
